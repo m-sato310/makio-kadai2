@@ -14,4 +14,8 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', [ProductController::class, 'index']);
+Route::get('/products', [ProductController::class, 'index']);
+
+Route::post('/products/search', [ProductController::class, 'search']);
+
+Route::get('/products/{productId}', [ProductController::class, 'show'])->name('products.show');
