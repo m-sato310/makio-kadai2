@@ -2,7 +2,7 @@
 
 ## 環境構築
 **Dockerビルド**
-1. `git clone git@github.com:estra-inc/confirmation-test-contact-form.git`
+1. `git clone git@github.com:m-sato310/makio-kadai2.git`
 2. DockerDesktopアプリを立ち上げる
 3. `docker-compose up -d --build`
 
@@ -43,14 +43,25 @@ php artisan migrate
 php artisan db:seed
 ```
 
+8. 画像表示するためにシンボリックリンクの設定
+``` bash
+php artisan storage:link
+```
+"The stream or file could not be opened"エラーが発生した場合
+srcディレクトリにあるstorageディレクトリ以下の権限を変更
+$ chmod -R 777 storage
+```
+
 ## 使用技術(実行環境)
 - PHP8.3.0
 - Laravel8.83.27
 - MySQL8.0.26
 
 ## ER図
-![alt](erd.png)
+![ER図](index.drowio.png)
 
 ## URL
 - 開発環境：http://localhost/
-- phpMyAdmin:：http://localhost:8080/
+- phpMyAdmin：http://localhost:8080/
+- 商品一覧画面:http://localhost/products
+- 商品登録画面:http://localhost/products/register

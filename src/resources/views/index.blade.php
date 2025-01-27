@@ -5,6 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>もぎたて</title>
+    <style>
+        th {
+            background-color: #289ADC;
+            color: white;
+            padding: 5px 40px;
+        }
+
+        tr:nth-child(odd) td {
+            background-color: #FFFFFF;
+        }
+
+        td {
+            padding: 25px 40px;
+            background-color: #EEEEEE;
+            text-align: center;
+        }
+
+        svg.w-5.h-5 {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +45,9 @@
             @foreach($products as $product)
             <tr>
                 <td>
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="商品画像">
+                    <a href="/products/{{ $product->id }}">
+                        <img src="{{ asset('storage/' . $product->image) }}" alt="商品画像">
+                    </a>
                 </td>
                 <td>{{ $product->name }}</td>
                 <td>¥{{ $product->price }}</td>
