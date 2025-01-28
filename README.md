@@ -61,9 +61,7 @@ $ chmod -R 777 storage
 ```
 
 ## ER図
-```
 ![ER図](index.drowio.png)
-```
 
 ## URL
 ```
