@@ -22,6 +22,19 @@ class ProductController extends Controller
     public function show($productId)
     {
         $product = Product::find($productId);
+        dump($productId);
         return view('show', compact('product'));
+    }
+
+    public function showRegister()
+    {
+        return view('register');
+    }
+
+    public function register(Request $request)
+    {
+        dd($request->all());
+        Product::create($request->all());
+        return redirect('/products');
     }
 }
