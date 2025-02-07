@@ -33,7 +33,7 @@ class ProductController extends Controller
 
     public function register(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         Product::create($request->all());
         return redirect('/products');
     }

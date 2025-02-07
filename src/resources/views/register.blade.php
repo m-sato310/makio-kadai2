@@ -17,10 +17,10 @@
         <input type="text" value="値段を入力" name="price">
         <label>商品画像</label>
         <input type="file" name="image">
-        <input type="radio" value="1" name="product_id">春
-        <input type="radio" value="2" name="product_id">夏
-        <input type="radio" value="3" name="product_id">秋
-        <input type="radio" value="4" name="product_id">冬
+        <input type="checkbox" value="1" name="season_id">春
+        <input type="checkbox" value="2" name="season_id">夏
+        <input type="checkbox" value="3" name="season_id">秋
+        <input type="checkbox" value="4" name="season_id">冬
         <label>商品説明</label>
         <textarea name="description"></textarea>
         <input type="button" onclick="history.back()" value="戻る">
