@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\ProductSeason;
+use App\Models\Product_Season;
 
-class ProductSeasonTableSeeder extends Seeder
+class Product_SeasonTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,77 +14,77 @@ class ProductSeasonTableSeeder extends Seeder
      */
     public function run()
     {
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '1',
             'season_id' => '3'
         ]);
 
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '1',
             'season_id' => '4'
         ]);
 
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '2',
             'season_id' => '1'
         ]);
 
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '3',
             'season_id' => '4'
         ]);
 
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '4',
             'season_id' => '2'
         ]);
 
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '5',
             'season_id' => '2'
         ]);
 
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '6',
             'season_id' => '2'
         ]);
 
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '6',
             'season_id' => '3'
         ]);
 
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '7',
             'season_id' => '1'
         ]);
 
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '7',
             'season_id' => '2'
         ]);
 
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '8',
             'season_id' => '2'
         ]);
 
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '8',
             'season_id' => '3'
         ]);
 
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '9',
             'season_id' => '2'
         ]);
 
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '10',
             'season_id' => '1'
         ]);
 
-        ProductSeason::create([
+        Product_Season::create([
             'product_id' => '10',
             'season_id' => '2'
         ]);
