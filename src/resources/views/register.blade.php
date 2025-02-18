@@ -12,12 +12,12 @@
     <form action="/register" method="post" enctype="multipart/form-data">
         @csrf
         <label>商品名</label>
-        <input type="text" value="商品名を入力" name="name">
+        <input type="text" placeholder="商品名を入力" value="{{ old('name') }}" name="name">
         @if ($errors->has('name'))
         <p style="color: red">{{ $errors->first('name') }}</p>
         @endif
         <label>値段</label>
-        <input type="text" value="値段を入力" name="price">
+        <input type="text" placeholder="値段を入力" value="{{ old('price') }}" name="price">
         @if ($errors->has('price'))
         @foreach($errors->get('price') as $error)
         <p style="color: red">{{ $error }}</p>
@@ -39,7 +39,7 @@
         <p style="color: red">{{ $errors->first('season_id') }}</p>
         @endif
         <label>商品説明</label>
-        <textarea name="description"></textarea>
+        <textarea name="description" placeholder="商品の説明を入力">{{ old('description') }}</textarea>
         @if ($errors->has('description'))
         @foreach($errors->get('description') as $error)
         <p style="color: red">{{ $error }}</p>
