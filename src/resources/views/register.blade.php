@@ -31,10 +31,9 @@
         @endforeach
         @endif
         <label>季節</label>
-        <input type="checkbox" value="1" name="season_id">春
-        <input type="checkbox" value="2" name="season_id">夏
-        <input type="checkbox" value="3" name="season_id">秋
-        <input type="checkbox" value="4" name="season_id">冬
+        @foreach ($seasons as $season)
+        <input type="checkbox" value="{{ $season->id }}" name="season_id[]">{{ $season->name }}
+        @endforeach
         @if ($errors->has('season_id'))
         <p style="color: red">{{ $errors->first('season_id') }}</p>
         @endif
