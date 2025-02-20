@@ -32,7 +32,7 @@
         @endif
         <label>季節</label>
         @foreach ($seasons as $season)
-        <input type="checkbox" value="{{ $season->id }}" name="season_id[]">{{ $season->name }}
+        <input type="checkbox" value="{{ $season->id }}" name="season_id[]" {{ in_array($season->id, old('season_id', [])) ? 'checked' : '' }}>{{ $season->name }}
         @endforeach
         @if ($errors->has('season_id'))
         <p style="color: red">{{ $errors->first('season_id') }}</p>

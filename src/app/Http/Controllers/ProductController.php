@@ -25,7 +25,8 @@ class ProductController extends Controller
     {
         $product = Product::find($productId);
         dump($productId);
-        return view('show', compact('product'));
+        $seasons = Season::all();
+        return view('show', compact('product', 'seasons'));
     }
 
     public function showRegister()
@@ -41,7 +42,8 @@ class ProductController extends Controller
         dump($data);
         $data['image'] = $request->image->store('fruits-img', 'public');
         dump($data);
-        Product::create($data);
+        $product = Product::create($data);
+        $product->seasons()->sync($data['season_id']);
         return redirect('/products');
     }
 }
