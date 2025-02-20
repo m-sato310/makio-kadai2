@@ -7,6 +7,8 @@ use App\Models\Product;
 use App\Http\Requests\ProductRequest;
 use App\Models\Season;
 
+use function GuzzleHttp\Promise\all;
+
 class ProductController extends Controller
 {
     public function index()
@@ -44,6 +46,14 @@ class ProductController extends Controller
         dump($data);
         $product = Product::create($data);
         $product->seasons()->sync($data['season_id']);
+        return redirect('/products');
+    }
+
+    public function update(ProductRequest $request)
+    {
+        $product = $request->only(['name', 'price', 'season_id', 'description', 'file']);
+        Product::find($request->id)->update($product);
+
         return redirect('/products');
     }
 }

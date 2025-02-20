@@ -8,19 +8,20 @@
 </head>
 
 <body>
-    <form action="" method="post">
+    <form action="/products" method="POST">
+        @method('PATCH')
         @csrf
         <input type="file" accept="image/png, image/jpeg" name="file" />
         <label>商品名</label>
-        <input type="text" value="{{ $product->name }}">
+        <input type="text" value="{{ $product->name }}" name="name">
         <label>値段</label>
-        <input type="text" value="{{ $product->price }}">
+        <input type="text" value="{{ $product->price }}" name="price">
         <label>季節</label>
         @foreach ($seasons as $season)
         <input type="checkbox" value="{{ $season->id }}" name="season_id[]" {{ $product->seasons->contains($season->id) ? 'checked' : '' }}>{{ $season->name }}
         @endforeach
         <label>商品説明</label>
-        <textarea name="" id="" rows="10" cols="50">{{ $product->description }}</textarea>
+        <textarea name="description" id="" rows="10" cols="50">{{ $product->description }}</textarea>
         <input type="button" onclick="history.back()" value="戻る">
         <input type="submit" value="変更を保存">
     </form>
