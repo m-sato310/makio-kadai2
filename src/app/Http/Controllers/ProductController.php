@@ -26,7 +26,7 @@ class ProductController extends Controller
     public function show($productId)
     {
         $product = Product::find($productId);
-        dump($productId);
+        // dump($productId);
         $seasons = Season::all();
         return view('show', compact('product', 'seasons'));
     }
@@ -51,6 +51,7 @@ class ProductController extends Controller
 
     public function update(ProductRequest $request)
     {
+        // dd($request);
         $product = $request->only(['name', 'price', 'season_id', 'description', 'file']);
         Product::find($request->id)->update($product);
 
