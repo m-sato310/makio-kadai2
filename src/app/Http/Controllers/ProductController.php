@@ -52,7 +52,8 @@ class ProductController extends Controller
     public function update(ProductRequest $request)
     {
         // dd($request);
-        $product = $request->only(['name', 'price', 'season_id', 'description', 'file']);
+        $product = $request->only(['name', 'price', 'season_id', 'description', 'image']);
+        $product['image'] = $request->image->store('fruits-img', 'public');
         Product::find($request->id)->update($product);
 
         return redirect('/products');

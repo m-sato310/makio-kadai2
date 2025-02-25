@@ -11,7 +11,7 @@
     <form action="/products" method="POST" enctype="multipart/form-data">
         @method('PATCH')
         @csrf
-        <input type="file" accept="image/png, image/jpeg" name="file" />
+        <input type="file" accept="image/png, image/jpeg" name="image" />
         @if ($errors->has('image'))
         @foreach($errors->get('image') as $error)
         <p style="color: red">{{ $error }}</p>
